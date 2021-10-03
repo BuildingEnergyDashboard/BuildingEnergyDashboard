@@ -1,0 +1,140 @@
+@charset "ISO-8859-1";
+
+ /* 
+  #FBB92F
+ */
+
+#map {
+  position: absolute;
+  left: 10px;
+  padding: 25px;
+  height: 500px;
+  width:500px;
+  background-color: #FBB92F;
+  z-index: 0;
+}
+
+
+
+#primary_uses_div{
+  position: absolute;
+  left: 565px;
+  padding: 20px;
+  height: 577px;
+  width: fit-content;
+  background-color: #FBB92F;
+    z-index: 1;
+}
+
+#container_primary_use{
+
+  height: 557px;
+  padding-bottom: 10px;
+  overflow: auto;
+}
+
+.primary_use_line_div{
+padding: 1px;
+}
+
+
+.primary_use_checkbox_div{
+  display: table-cell;
+}
+.primary_use_label_div{
+   width: 220px;
+   display: table-cell;
+}
+
+.primary_use_div_cnt
+{ 
+  padding-left: 5px;
+  padding-right:5px;
+  width: 25px;
+  display: table-cell;
+}
+
+
+
+
+
+/*
+Energy Star div
+*/
+#energy_star_rating_div{
+  position: absolute;
+  padding: 20px;
+  width: 517px;
+  top:565px;
+  background-color:  #FBB92F;
+  z-index: 2;
+}
+
+.inputs {
+   padding-bottom: 0em;
+}
+
+.input_title{
+height:10px;
+padding-bottom: 11px;
+}
+
+
+/*Scroll bar specific*/
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #00883C;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #8BC53F;
+}
+
+
+/*Legend specific*/
+.legend {
+  padding: 6px 8px;
+  font: 14px Arial, Helvetica, sans-serif;
+  background: white;
+  background: rgba(255, 255, 255, 0.8);
+  border: 5px solid #404041;
+  border-radius: 16px;
+  line-height: 24px;
+  color: #555;
+}
+
+.legend h4 {
+  text-align: center;
+  font-size: 16px;
+  margin: 2px 12px 8px;
+  color: #777;
+}
+
+.legend span {
+  position: relative;
+  bottom: 3px;
+}
+
+.legend i {
+  width: 18px;
+  height: 18px;
+  float: left;
+  margin: 0 8px 0 0;
+  opacity: 0.7;
+}
+
+.legend i.icon {
+  background-size: 18px;
+  background-color: rgba(255, 255, 255, 1);
+}

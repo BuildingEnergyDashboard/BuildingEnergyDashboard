@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="ISO-8859-1">
+
+	<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+	<meta http-equiv="Pragma" content="no-cache">
+	<meta http-equiv="Expires" content="0">
+
+	<title>Prototype Orlando Building Data</title>
+	<link rel="stylesheet" href="buildingenergydashboard.css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.4.0/leaflet.css" />
+	<script src="https://code.jquery.com/jquery-2.1.4.min.js" type="text/javascript"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.4.0/leaflet.js" type="text/javascript"></script>
+</head>
+<body>
+	<div id="map">loading...</div>
+	<div id="primary_uses_div">
+		<div class="input_title">
+				<span style="float:left">Primary Uses</span>
+				<span style="float:right;padding-right: 10px;">Quantity</span>
+		</div>
+		<div id="container_primary_use"></div>
+	</div>
+	<div class="inputs" id="energy_star_rating_div">
+		<div class="input_title" style="float:left">Energy Star Rating</div>
+		<input type="checkbox" class="energyStarRating" value="esr0_25"   checked="true" onclick="mapUpdate()">
+		<label>0-25</label>
+		<input type="checkbox" class="energyStarRating" value="esr26_50"  checked="true" onclick="mapUpdate()">
+		<label>26-50</label>
+		<input type="checkbox" class="energyStarRating" value="esr51_75"  checked="true" onclick="mapUpdate()">
+		<label>51-75</label>
+		<input type="checkbox" class="energyStarRating" value="esr76_100" checked="true" onclick="mapUpdate()">
+		<label>76-100</label>
+		<input type="checkbox" class="energyStarRating" value="null"      checked="true" onclick="mapUpdate()">
+		<label>Not rated</label>
+	</div>
+	<script src="buildingenergydashboard.js" type="text/javascript"></script>
+</body>
+</html>
