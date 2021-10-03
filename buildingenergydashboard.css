@@ -2,6 +2,8 @@
 
  /* 
   #FBB92F
+
+
  */
 
 #map {
@@ -13,8 +15,6 @@
   background-color: #FBB92F;
   z-index: 0;
 }
-
-
 
 #primary_uses_div{
   position: absolute;
@@ -28,7 +28,7 @@
 
 #container_primary_use{
 
-  height: 557px;
+  height: 510px;
   padding-bottom: 10px;
   overflow: auto;
 }
@@ -36,7 +36,6 @@
 .primary_use_line_div{
 padding: 1px;
 }
-
 
 .primary_use_checkbox_div{
   display: table-cell;
@@ -54,19 +53,16 @@ padding: 1px;
   display: table-cell;
 }
 
-
-
-
-
 /*
 Energy Star div
 */
 #energy_star_rating_div{
   position: absolute;
-  padding: 20px;
-  width: 517px;
+  padding-left: 10px;
+  width: 547px;
+  height:60px;
   top:565px;
-  background-color:  #FBB92F;
+  background-color: #FBB92F;
   z-index: 2;
 }
 

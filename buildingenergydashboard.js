@@ -59,9 +59,9 @@
      pointToLayer: function (feature, latlng) {
        return L.circleMarker(latlng, {
          radius: getEnergyStarRangesize(feature.properties.energy_sta),
-         opacity: 1.5,
+         opacity: 1.8,
          color: getMarkerColor(feature.properties.energy_sta),
-         fillOpacity: 0.8
+         fillOpacity: .61
      });
    }
  }
@@ -91,7 +91,7 @@
      primary_us: [],
      energyStarRating: []
    }
- console.log("update checkbox state")
+ //console.log("update checkbox state")
    for (let input of document.querySelectorAll('input')) {
      if (input.checked) {
        switch (input.className) {
@@ -101,6 +101,22 @@
      }
    }
  }
+
+
+
+
+
+
+
+
+function selectAllCat(source){
+  var clist=document.getElementsByClassName("primary_us");
+  for (var i = 0; i < clist.length; ++i) {
+  console.log(clist[i].checked)  
+    clist[i].checked = source.checked; 
+  }
+  mapUpdate();
+}
  /**
  * Function that returns a color based on Energy Star Ratings
  * @param    {int}      x   Energy Star Rating
@@ -123,8 +139,7 @@
  * @param    {int}      x   Energy Star Rating
  * @return   {String}       Code used in the check boxes for the energy star rating range.
  */
- 
- function getEnergyStarRange(x) {
+  function getEnergyStarRange(x) {
    if (x > 0 && x <= 25)
      return "esr0_25";
    else if (x > 25 && x <= 50)
@@ -136,6 +151,11 @@
    else
      return "null";
  }
+  /**
+ * Function that returns a number for circle marker size based on Energy Star Ratings
+ * @param    {int}      x   Energy Star Rating
+ * @return   {String}       Returns a number between 6 and 12.
+ */
  function getEnergyStarRangesize(x) {
    if (x > 0 && x <= 25)
      return "6";
