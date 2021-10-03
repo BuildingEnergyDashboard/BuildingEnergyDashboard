@@ -93,6 +93,7 @@
    }
  //console.log("update checkbox state")
    for (let input of document.querySelectorAll('input')) {
+     if(!input.checked&&input.className=='primary_us'){document.getElementById('selectAllCat').checked =false; }
      if (input.checked) {
        switch (input.className) {
          case 'primary_us': checkboxStates.primary_us.push(input.value); break
@@ -101,18 +102,13 @@
      }
    }
  }
-
-
-
-
-
-
-
-
+ /**
+ * Function that set all primary_use check boxes to check or un checked.  
+ * @param    {object}      selectAllCat checkbox
+ */
 function selectAllCat(source){
   var clist=document.getElementsByClassName("primary_us");
   for (var i = 0; i < clist.length; ++i) {
-  console.log(clist[i].checked)  
     clist[i].checked = source.checked; 
   }
   mapUpdate();

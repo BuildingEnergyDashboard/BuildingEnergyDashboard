@@ -8,14 +8,36 @@
 
 #map {
   position: absolute;
-  left: 10px;
-  padding: 25px;
+  left: 14px;
+  padding:27px;
   height: 500px;
   width:500px;
   background-color: #FBB92F;
   z-index: 0;
 }
 
+input[type=checkbox] {
+  -webkit-appearance:none;
+  -moz-appearance: none;
+  appearance: none;
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  border: 1px solid #00883C;
+  outline: none;
+  vertical-align: middle;
+}
+
+input[type=checkbox]:checked {
+  background-color:#8BC53F;
+}
+
+#main{
+
+  border: 5px solid #353535;
+  height:616px ;
+  width:877px;
+ }
 #primary_uses_div{
   position: absolute;
   left: 565px;
@@ -28,13 +50,13 @@
 
 #container_primary_use{
 
-  height: 510px;
+  height: 501px;
   padding-bottom: 10px;
   overflow: auto;
 }
 
 .primary_use_line_div{
-padding: 1px;
+padding: 0px;
 }
 
 .primary_use_checkbox_div{
@@ -58,10 +80,10 @@ Energy Star div
 */
 #energy_star_rating_div{
   position: absolute;
-  padding-left: 10px;
+  padding-left: 20px;
   width: 547px;
-  height:60px;
-  top:565px;
+  height:63px;
+  top:567px;
   background-color: #FBB92F;
   z-index: 2;
 }
@@ -71,8 +93,10 @@ Energy Star div
 }
 
 .input_title{
-height:10px;
-padding-bottom: 11px;
+  font-weight: bold;
+  height:10px;
+  padding-bottom: 11px;
+  padding-right: 5px;
 }
 
 
