@@ -44,15 +44,18 @@
      // OnEachFeature adds popups with data.
      layer.bindPopup
        (
-         feature.properties.property_n
-         + '<p><b> Primary Use:  ' + feature.properties.primary_us + '</b></p>'
-         + '<p><b> Address:      ' + feature.properties.property_a + '</b></p>'
-         + '<p><b> Energy Star : ' + feature.properties.energy_sta + '</b></p>'
-         + '<p><b> Site_energ:   ' + feature.properties.site_energ + '</b></p>'
-         + '<p><b> Year:         ' + feature.properties.year +       '</b></p>'
-         + '<p><b> <button type="submit" onClick="myCompareBld(\''
-         + feature.properties.property_n
-         + '\');"> Click to Compare</button></b></p>'
+                    feature.properties.property_n
+                     + '<p><b> Address:    ' + feature.properties.property_a + '</b></p>'
+                     + '<p><b> Energy_sta: ' + feature.properties.energy_sta + '</b></p>'
+                     + '<p><b> Site_energ: ' + feature.properties.site_energ + '</b></p>'
+                     + '<p><b> Year:       ' + feature.properties.year + '</b></p>'
+                     + '<button onclick="myCompareBld(\''
+                     + feature.properties.property_n + '\',\''
+                     + feature.properties.property_a + '\', \''
+                     + feature.properties.energy_sta + '\', \''
+                     + feature.properties.site_energ + '\')">Compare Property</button>'
+                     + '<button onclick="resetCompare(\'' + '\')">Reset Compare</button>'
+
        );
      },
      // PointToLayer adds circles and getMarkerColor adds the appropriate color based on energy star ratings.
@@ -103,13 +106,13 @@
    }
  }
  /**
- * Function that set all primary_use check boxes to check or un checked.  
+ * Function that set all primary_use check boxes to check or un checked.
  * @param    {object}      selectAllCat checkbox
  */
 function selectAllCat(source){
   var clist=document.getElementsByClassName("primary_us");
   for (var i = 0; i < clist.length; ++i) {
-    clist[i].checked = source.checked; 
+    clist[i].checked = source.checked;
   }
   mapUpdate();
 }
@@ -164,6 +167,7 @@ function selectAllCat(source){
    else
      return 5;
  }
+
  /**
  * Function takes a URL and returns a JSON file.
  * @param    {url}      x   Url of the data.
@@ -187,7 +191,7 @@ function selectAllCat(source){
    let urlcat = 'https://data.cityoforlando.net/resource/f63n-kp6t.json?$select=primary_us,count(primary_us)%20AS%20cnt&$group=primary_us&$order=cnt%20DESC'
    let primaryUseCat = await getJson(urlcat);
    let html = '';
- 
+
    primaryUseCat.forEach(primaryUseCat => {
      html += '<div class= "primary_use_line_div">'
      html += '   <div class="primary_use_checkbox_div">'
@@ -216,7 +220,45 @@ function selectAllCat(source){
    geojsonLayer.addData(data)
    })
  }
- 
- 
+
+var properties_to_compare = [];
+
+function myCompareBld(name, address, e_star, s_energ) {
+    var temp_property_attribute_list = [name, address, e_star, s_energ]
+    properties_to_compare.push(temp_property_attribute_list);
+    if (properties_to_compare.length  === 1){
+        displayBuilding0();
+    } else if (properties_to_compare.length  === 2){
+        displayBuilding0();
+        displayBuilding1();
+    } else {properties_to_compare.pop();}
+}
+
+function displayBuilding0(){
+    document.getElementById('compare_div0').innerHTML =
+            "<br/>" +
+            "<b>" + " Name: " + "</b>" + properties_to_compare[0][0] +
+            "<br/>" + "<b>"+" Address: "+"</b>" +  properties_to_compare[0][1] +
+            "<br/>" + "<b>"+" Energy Start Rating: "+"</b>" + properties_to_compare[0][2] +
+            "<br/>" + "<b>"+" Site Energy Rating: "+"</b>" + properties_to_compare[0][3];
+    document.getElementById("wrapper").style.display = "block";
+}
+
+function displayBuilding1(){
+            document.getElementById('compare_div1').innerHTML =
+            "<br/>" +
+            "<b>" + " Name: " + "</b>" + properties_to_compare[1][0] +
+            "<br/>" + "<b>"+" Address: "+"</b>" +  properties_to_compare[1][1] +
+            "<br/>" + "<b>"+" Energy Start Rating: "+"</b>" + properties_to_compare[1][2] +
+            "<br/>" + "<b>"+" Site Energy Rating: "+"</b>" + properties_to_compare[1][3];
+}
+
+function resetCompare(){
+    properties_to_compare = [];
+    document.getElementById('compare_div0').innerHTML = "";
+    document.getElementById('compare_div1').innerHTML = "";
+    document.getElementById("wrapper").style.display = "none";
+}
+
  /****** INIT ******/
  renderPrimaryUseCat();

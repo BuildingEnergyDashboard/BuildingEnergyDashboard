@@ -7,13 +7,37 @@
 	<meta http-equiv="Pragma" content="no-cache">
 	<meta http-equiv="Expires" content="0">
 
+
+
 	<title>Prototype Orlando Building Data</title>
-	<link rel="stylesheet" href="buildingenergydashboard.css" />
+	<link rel="stylesheet" href="/gavin_test/buildingenergydashboard.css" />
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.4.0/leaflet.css" />
 	<script src="https://code.jquery.com/jquery-2.1.4.min.js" type="text/javascript"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.4.0/leaflet.js" type="text/javascript"></script>
+
+    <img src="/gavin_test/OrlandoOpenDataLogo.png" alt="data.cityoforlando.net" onerror="this.style.display=&quot;none&quot;" title="" style="width:260px;height:80px;">
+
+
+
 </head>
 <body>
+    <div id = "bewes_info_wrapper">
+        <div id = "bewes_info">
+        The City believes that benchmarking is an important best management practice and public disclosure of building energy performance promotes transparency and accountability.
+        Sharing benchmarking data on a large scale will open up a conversation among all stakeholders and allow everyone to work toward common energy goals by recognizing and rewarding efficiency.
+        A building's energy efficiency score is similar to a miles per gallon (MPG) rating for cars or nutritional labels for food.
+        With transparent scores, buyers and tenants are able to make better-informed decisions about buildings they live and work in based on energy use and estimated utility cost.
+        More energy efficient spaces have been shown to lower energy bills, improve tenant comfort, reduce asthma rates and increase overall productivity.
+        All these factors make energy-efficient buildings more appealing for current and prospective tenants and future buyers.
+
+        </div>
+
+        <div id = "bewes_info_update">
+            <span class="meta-title"><b>Updated</b></br></span>
+            <span class="date">September 27, 2021</span>
+        </div>
+    </div>
+
 <div id = "main">
 	<div id="map">loading...</div>
 	<div id="primary_uses_div">
@@ -22,12 +46,10 @@
 				<span style="float:right;padding-right: 10px;">Quantity</span>
 		</div>
 		<div class="primary_use_checkbox_div" >
-
 			<input type="checkbox" id="selectAllCat" checked="true" onclick="selectAllCat(this)">
 			<label><b>Select All</b></label>
-			
+	</div>
 	<div id="container_primary_use">
-			</div>
 	</div>
 	</div>
 	<div class="inputs" id="energy_star_rating_div">
@@ -44,6 +66,11 @@
 		<label>Not rated</label>
 	</div>
 </div>
-	<script src="buildingenergydashboard.js" type="text/javascript"></script>
+	<script src="/gavin_test/buildingenergydashboard.js" type="text/javascript"></script>
+	 <div id="wrapper">
+        <div id="compare_div0"></div>
+        <div id="compare_div1"><center>Select Another Property To Compare</center></div>
+    </div>
 </body>
+
 </html>
