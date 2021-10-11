@@ -164,7 +164,6 @@ function selectAllCat(source){
    else
      return 5;
  }
- 
  /**
  * Function takes a URL and returns a JSON file.
  * @param    {url}      x   Url of the data.

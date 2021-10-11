@@ -6,6 +6,13 @@
 
  */
 
+ 
+ body {
+  font-family: Arial;
+  font-size: 14px;
+  color: black;
+} 
+
 #map {
   position: absolute;
   left: 14px;
