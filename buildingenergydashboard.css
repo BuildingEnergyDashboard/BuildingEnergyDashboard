@@ -1,10 +1,17 @@
 @charset "ISO-8859-1";
 
- /* 
+ /*
   #FBB92F
 
 
  */
+
+ body {
+  font-family: Arial;
+  font-size: 14px;
+  color: black;
+}
+
 
 #map {
   position: absolute;
@@ -38,6 +45,7 @@ input[type=checkbox]:checked {
   height:616px ;
   width:877px;
  }
+
 #primary_uses_div{
   position: absolute;
   left: 565px;
@@ -68,7 +76,7 @@ padding: 0px;
 }
 
 .primary_use_div_cnt
-{ 
+{
   padding-left: 5px;
   padding-right:5px;
   width: 25px;
@@ -80,10 +88,11 @@ Energy Star div
 */
 #energy_star_rating_div{
   position: absolute;
+  padding-top: 10px;
   padding-left: 20px;
   width: 547px;
-  height:63px;
-  top:567px;
+  height:53px;
+  top:840px;
   background-color: #FBB92F;
   z-index: 2;
 }
@@ -157,4 +166,59 @@ Energy Star div
 .legend i.icon {
   background-size: 18px;
   background-color: rgba(255, 255, 255, 1);
+}
+
+#bewes_info_wrapper{
+    width: 960px;
+    height: 200;
+    overflow: hidden;
+    color: #5e5e5e;
+}
+
+#bewes_info {
+    font: 15px Arial, Helvetica, sans-serif;
+    word-wrap: break-word;
+    box-sizing: border-box;
+    float: left;
+    width: 700px;
+    height: 60;
+    border-right-style: solid;
+    padding-bottom: 20px;
+}
+
+#bewes_info_update {
+    display: inline-block;
+    width: 240px;
+    padding-left: 10px;
+}
+
+#wrapper {
+    width: 960px;
+    height:150px;
+    overflow: hidden;
+    display: none;
+}
+
+#compare_div0 {
+    font-family: Texta, Helvetica, sans-serif;
+    border: 3px solid #404041;
+    border-radius: 16px;
+    color: #555;
+    width: 400px;
+    height:100px;
+    float: left;
+    box-shadow: 0px 10px 6px -6px #6BA8DB;
+    margin:15px
+}
+
+#compare_div1 {
+    font-family: Texta, Helvetica, sans-serif;
+    border: 3px solid #404041;
+    border-radius: 16px;
+    color: #555;
+    width: 400px;
+    height:100px;
+    overflow: hidden;
+    box-shadow: 0px 10px 6px -6px #6BA8DB;
+    margin:15px
 }
