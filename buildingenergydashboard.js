@@ -117,6 +117,8 @@ function selectAllCat(source){
  * Function that returns a color based on Energy Star Ratings
  * @param    {int}      x   Energy Star Rating
  * @return   {String}       Color from arker_colors array
+ * 
+ * ["#1a9641", "#a6d96a", "#ffffbf", "#fdae61", "#d7191c"]
  */
  function getMarkerColor(x) {
    if (x > 0 && x <= 25)
